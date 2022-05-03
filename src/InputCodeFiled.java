@@ -87,13 +87,20 @@ public class InputCodeFiled extends JDialog implements MainForm {
     private void code() {
         String text = textArea.getText();
         int shift = 0;
+        boolean isCode = true;
         try {
             shift = Integer.parseInt(textFieldNumber.getText());
+            if (shift <= 0 || shift % 71 == 0) {
+                Util.showMessageWrongInput(contentPane, "Число должно быть больше 0 и не кратно 71", "Ошибка ввода");
+                isCode = false;
+            }
         } catch (NumberFormatException ex) {
             Util.showMessageWrongInput(contentPane, "Введите целое число", "Ошибка ввода");
         }
-        String textCode = Code.code(shift, text);
-        textArea.setText(textCode);
+        if (isCode) {
+            String textCode = Code.code(shift, text);
+            textArea.setText(textCode);
+        }
     }
 
     private void clear() {

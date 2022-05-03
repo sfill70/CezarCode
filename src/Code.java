@@ -1,8 +1,10 @@
 
 public class Code {
 
+    //length = 71
     static private final String ALL_SYMBOL = " !?\"',-.АБВГДЕЁЖЗИКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ" +
             "абвгдеёжзиклмнопрстуфхцчшщъыьэя";
+
 
     public static String code(int shift, String text) {
         char[] textArray = text.toCharArray();

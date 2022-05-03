@@ -6,8 +6,6 @@ public class Main {
 
     public static void main(String[] args) {
 
-//        System.out.println(Charset.availableCharsets());
-
         try {
             Util.createDirectory();
         } catch (IOException e) {
